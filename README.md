@@ -1,5 +1,5 @@
-## General Assembly DSI 9 - Gabriel Perez Prieto
-## Project 2 - Ames Housing Data and Kaggle Challenge
+## Ames Housing Data and Kaggle Challenge
+---
 
 ### Problem Statement:
 
@@ -15,67 +15,20 @@ After creating models with the given dataset, the model was tested on a new data
 techniques to clean the dataset the models were used to predict those prices based on the features selected to run the
 regression model on.
 
-The main performance indicator used to evaluate and tune models was the RMSE (Root Mean Squared Error).
+The main performance indicator used to evaluate and tune models was the RMSLE (Root Mean Squared Log Error).
 
-### Executive Summary:
-- Libraries Import
-- Load Dataset
-- Data Cleaning
-  - Renaming Columns
-  - Handling Null Values
-  - Transforming Nominal Data to Numerical
-  - Null Values Inputting
-- EDA (Exploratory Data Analysis)
-  - Correlations of Features with Target Variable
-  - Visual Representation of Features and Target (Numerical)
-  - Checking for Outliers (Numerical Features)
-  - Checking Distributions for all Numerical Features
-  - Feature Engineering
-  - Visual Representation of Features and Target (Nominal)
-  - Creating Dummy Variables for Nominal Features
-  - Saving Clean Dataset to .csv
-- Feature Selection and Model Tuning
-  - Checking Model's Performance
-- Creating Model
-  - Scale Data
-  - Instantiate a Linear Regression Model
-  - Evaluate Model
-- Regularization
-  - Ridge
-  - Lasso
-- Kaggle Submission
+### Steps Taken:
+
 
 ### Conclusion:
-Two final models were created
-- Model_1
-  - 49 Features
-  - RMSE = 0.145
-  - R2 Train: 0.876
-  - R2 Test: 0.894
-  - Ridge Regularization
-  - Kaggle Score: 24,001
+- Final Model's Performance
+  - RMSLE Test= 0.0085
+  - R2 Train: 0.9627
+  - R2 Test: 0.9275
+  - Kaggle Score: 0.11704 RMSLE (Top 11%)
 
-- Model_2
-  - 1850 Features
-  - RMSE = 0.094
-  - R2 Train: 0.923
-  - R2 Test: 0.963
-  - Lasso Regularization
-  - Kaggle Score: 19,200
-
-Model_1 is a Multiple Linear Regression Model with 49 Features that were the most correlated features with the
-target variable (Sale Price), by interaction terms between existing variables and one hot encoding for the
-Neighborhoods feature. The model responded better to the Ridge Regularization on Kaggle despite showing no signals
-of overfitting.
-
-Model_2 is a Multiple Linear Regression Model with 1850 Features created using feature engineering techniques such as
-Polynomial Features for numeric variables and one hot encoding for nominal variables. All original features were also
-considered while modeling. Model_2 responded better to the Lasso Regularization as it had an extensive list of features
-and was the best performing model on Kaggle between the two created.
+A few different models were trained and final predictions were submitted to Kaggle by using a Voting Regressor as an Ensembling Technique.
 
 ### Next Steps and Model Improvement:
 - External Input to the Model
 - New Imputation Techniques for Null Values
-- Better Outlier Analysis
-- Feature Selection Through Lasso and Implementation Through Ridge
-- Implementation of GridScaler
