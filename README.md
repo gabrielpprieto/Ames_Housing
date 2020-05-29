@@ -23,6 +23,8 @@ A few of the steps taken were to Convert a few of the categorical features into 
 The imputation techniques used were mainly using the median/mode of the training dataset into both training and testing datasets, avoiding any data leakage.
 
 The distribution of the label column was very skewed and so it was log-transformed providing the following curve:
+
+
 ![Label Distribution](./images/label.png)
 
 A couple of outliers were removed from the data by analyzing scatterplots for the numeric features and all categorical features were turned in to dummies.
@@ -33,16 +35,18 @@ Features with a calculated skew of over 0.5 were also log-transformed in order t
 
 Following a plot with the first 30 data points on the testing set and predictions of all tested models as well as final Voting Regressor compared with the actual values.
 
+
 ![Predictions](./images/results.png)
 
 ### Conclusion:
-- Final Model's Performance
+- Final Model's Performance:
   - RMSLE Test= 0.0085
   - R2 Train: 0.9627
   - R2 Test: 0.9275
   - Kaggle Score: 0.11704 RMSLE (Top 11%)
 
-A few different models were trained and final predictions were submitted to Kaggle by using a Voting Regressor as an Ensembling Technique.
+
+![Top Features](./images/features.png)
 
 ### Next Steps and Model Improvement:
 - External Input to the Model
