@@ -18,7 +18,22 @@ regression model on.
 The main performance indicator used to evaluate and tune models was the RMSLE (Root Mean Squared Log Error).
 
 ### Steps Taken:
+A few of the steps taken were to Convert a few of the categorical features into numeric features. Moreover, By using the data dictionary a lot of null values were actually replaced with a '0' or 'None'.
 
+The imputation techniques used were mainly using the median/mode of the training dataset into both training and testing datasets, avoiding any data leakage.
+
+The distribution of the label column was very skewed and so it was log-transformed providing the following curve:
+![Label Distribution](./images/label.png)
+
+A couple of outliers were removed from the data by analyzing scatterplots for the numeric features and all categorical features were turned in to dummies.
+
+For feature engineering the total square footage and total area of the properties were considered in the analysis as well as boolean features such as if the property had a pool/garage etc. Also, polynomial features were added in order to account for non-linear relationships between highest correlated features with the target sale prices.
+
+Features with a calculated skew of over 0.5 were also log-transformed in order to normalize the data distribution.
+
+Following a plot with the first 30 data points on the testing set and predictions of all tested models as well as final Voting Regressor compared with the actual values.
+
+![Predictions](./images/results.png)
 
 ### Conclusion:
 - Final Model's Performance
@@ -32,3 +47,4 @@ A few different models were trained and final predictions were submitted to Kagg
 ### Next Steps and Model Improvement:
 - External Input to the Model
 - New Imputation Techniques for Null Values
+- Model Improvement other Ensemlbing Techniques - Stacking
